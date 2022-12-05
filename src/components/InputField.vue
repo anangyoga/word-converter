@@ -24,9 +24,10 @@
 }
 textarea {
   border-radius: 15px;
-
+  padding: 10px;
   width: 900px;
   overflow: hidden;
+  outline: none;
 }
 
 .buttons {
