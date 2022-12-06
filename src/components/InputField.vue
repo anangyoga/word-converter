@@ -19,7 +19,6 @@ const handleLowerCase = () => {
       <button>Sentence case</button>
       <button>Clear</button>
     </div>
-    {{ input }}
   </div>
 </template>
 
