@@ -14,7 +14,7 @@ const handleCapitalize = () => {
   const firstLetter = input.value[0];
   const upperCase = firstLetter.toUpperCase();
   const slice = input.value.slice(1);
-  return (input.value = upperCase + slice);
+  return (input.value = upperCase + slice.toLowerCase());
 };
 </script>
 
