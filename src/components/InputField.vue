@@ -6,6 +6,16 @@ const input = ref("");
 const handleLowerCase = () => {
   input.value = input.value.toLowerCase();
 };
+const handleUpperrCase = () => {
+  input.value = input.value.toUpperCase();
+};
+
+const handleCapitalize = () => {
+  const firstLetter = input.value[0];
+  const upperCase = firstLetter.toUpperCase();
+  const slice = input.value.slice(1);
+  return (input.value = upperCase + slice);
+};
 </script>
 
 <template>
@@ -13,9 +23,9 @@ const handleLowerCase = () => {
     <p>150 Words</p>
     <textarea v-model="input" name="fields" id="note" cols="60" rows="20"> </textarea>
     <div class="buttons">
-      <button>Capitalize</button>
+      <button @click="handleCapitalize">Capitalize</button>
       <button @click="handleLowerCase">lower case</button>
-      <button>UPPER CASE</button>
+      <button @click="handleUpperrCase">UPPER CASE</button>
       <button>Sentence case</button>
       <button>Clear</button>
     </div>
