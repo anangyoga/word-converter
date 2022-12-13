@@ -16,6 +16,10 @@ const handleCapitalize = () => {
   const slice = input.value.slice(1);
   return (input.value = upperCase + slice.toLowerCase());
 };
+
+const clearField = () => {
+  input.value = "";
+};
 </script>
 
 <template>
@@ -27,7 +31,7 @@ const handleCapitalize = () => {
       <button @click="handleLowerCase">lower case</button>
       <button @click="handleUpperrCase">UPPER CASE</button>
       <button>Sentence case</button>
-      <button>Clear</button>
+      <button @click="clearField">Clear</button>
     </div>
   </div>
 </template>
