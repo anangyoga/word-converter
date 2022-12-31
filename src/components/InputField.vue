@@ -10,11 +10,16 @@ const handleUpperrCase = () => {
   input.value = input.value.toUpperCase();
 };
 
-const handleCapitalize = () => {
+const handleSentenceCase = () => {
   const firstLetter = input.value[0];
   const upperCase = firstLetter.toUpperCase();
   const slice = input.value.slice(1);
   return (input.value = upperCase + slice.toLowerCase());
+};
+
+const handleTitleCase = () => {
+  const charAt = input.value.charAt(0);
+  console.log(charAt);
 };
 
 const clearField = () => {
@@ -27,10 +32,10 @@ const clearField = () => {
     <p>150 Words</p>
     <textarea v-model="input" name="fields" id="note" cols="60" rows="20"> </textarea>
     <div class="buttons">
-      <button @click="handleCapitalize">Capitalize</button>
+      <button @click="handleSentenceCase">Sentence Case</button>
       <button @click="handleLowerCase">lower case</button>
       <button @click="handleUpperrCase">UPPER CASE</button>
-      <button>Sentence case</button>
+      <button @click="handleTitleCase">Title Case</button>
       <button @click="clearField">Clear</button>
     </div>
   </div>
