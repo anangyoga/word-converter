@@ -18,8 +18,12 @@ const handleSentenceCase = () => {
 };
 
 const handleTitleCase = () => {
-  const charAt = input.value.charAt(0);
-  console.log(charAt);
+  const splitStr = input.value.toLowerCase().split(" ");
+  for (let i = 0; i < splitStr.length; i++) {
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+  }
+  console.log(splitStr);
+  return (input.value = splitStr.join(" "));
 };
 
 const clearField = () => {
