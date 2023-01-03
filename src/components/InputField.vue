@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const input = ref("");
+const words = ref(0);
 
 const handleLowerCase = () => {
   input.value = input.value.toLowerCase();
@@ -22,18 +23,21 @@ const handleTitleCase = () => {
   for (let i = 0; i < splitStr.length; i++) {
     splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
   }
-  console.log(splitStr);
   return (input.value = splitStr.join(" "));
 };
 
 const clearField = () => {
   input.value = "";
 };
+
+watch(input, (str) => {
+  words.value = str.trim().split(/\s+/).length;
+});
 </script>
 
 <template>
   <div class="container">
-    <p>150 Words</p>
+    <p>{{ words }} Words</p>
     <textarea v-model="input" name="fields" id="note" cols="60" rows="20"> </textarea>
     <div class="buttons">
       <button @click="handleSentenceCase">Sentence Case</button>
