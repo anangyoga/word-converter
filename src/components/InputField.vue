@@ -31,7 +31,7 @@ const clearField = () => {
 };
 
 watch(input, (str) => {
-  words.value = str.trim().split(/\s+/).length;
+  input.value === "" ? (words.value = 0) : (words.value = str.trim().split(/\s+/).length);
 });
 </script>
 
